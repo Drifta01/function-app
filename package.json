@@ -1,0 +1,28 @@
+{
+  "name": "function-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\"",
+    "test:getResults": "node test-getResults.js",
+    "test:database": "node test-database.js"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@azure/event-hubs": "^5.11.5",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/sqlite3": "^3.1.11",
+    "typescript": "^4.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}
